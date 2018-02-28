@@ -55,5 +55,11 @@ public class Card {
         System.out.println("Card Rank: " + thirdCard.rank);
         System.out.println("Card Suit: " + thirdCard.suit);
         System.out.println("Card Value: " + thirdCard.value);
+
+        Deck deck = new Deck();
+        Card[] playerOneHand = deck.dealHand();
+        for(int i = 0; i < playerOneHand.length; i++) {
+            System.out.println(playerOneHand[i].rank + " " + playerOneHand[i].suit);
+        }
     }
 }
