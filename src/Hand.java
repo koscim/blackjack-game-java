@@ -10,7 +10,7 @@ public class Hand {
     }
 
     public void assignOwner(Object newOwner) {
-        owner = newOwner;
+        this.owner = newOwner;
     }
 
     public void addCards(Card[] newCards) {
@@ -26,5 +26,31 @@ public class Hand {
 
     public void calculateHand() {
         System.out.println("Calculating score");
+        for (int i = 0; i < cards.length; i++) {
+            if (cards[i].rank == "J" || cards[i].rank == "Q" || cards[i].rank == "K") {
+                score += 10;
+            } else if (cards[i].rank == "A") {
+                score += cards[i].value;
+                if (score > 21) {
+                    cards[i].value = 1;
+                    score -= 10;
+                }
+            } else {
+                score += cards[i].value;
+            }
+            if (score > 21) {
+                for (int j = 0; j < cards.length; j++) {
+                    if (cards[j].rank == "A" && cards[j].value == 11) {
+                        cards[j].value = 1;
+                        score -= 10;
+                    }
+                }
+            }
+            System.out.println(owner + " Score: " + score);
+            if (score > 21) {
+                System.out.println("Bust! " + owner + "loses...");
+//                owner.lost = true;
+            }
+        }
     }
 }
