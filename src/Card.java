@@ -38,28 +38,19 @@ public class Card {
     }
 
     public static void main(String []args) {
-        Card firstCard = new Card("2", "hearts");
-
-        System.out.println("Card Rank: " + firstCard.rank);
-        System.out.println("Card Suit: " + firstCard.suit);
-        System.out.println("Card Value: " + firstCard.value);
-
-        Card secondCard = new Card("J", "clubs");
-
-        System.out.println("Card Rank: " + secondCard.rank);
-        System.out.println("Card Suit: " + secondCard.suit);
-        System.out.println("Card Value: " + secondCard.value);
-
-        Card thirdCard = new Card("A", "spades");
-
-        System.out.println("Card Rank: " + thirdCard.rank);
-        System.out.println("Card Suit: " + thirdCard.suit);
-        System.out.println("Card Value: " + thirdCard.value);
-
+        Player player = new Player();
         Deck deck = new Deck();
-        Card[] playerOneHand = deck.dealHand();
-        for(int i = 0; i < playerOneHand.length; i++) {
-            System.out.println(playerOneHand[i].rank + " " + playerOneHand[i].suit);
-        }
+
+        Hand playerHand = new Hand();
+
+        playerHand.addCards(deck.dealHand());
+        playerHand.assignOwner(player);
+        player.pickUpHand(playerHand);
+
+//
+//        Card[] playerOneHand = deck.dealHand();
+//        for(int i = 0; i < playerOneHand.length; i++) {
+//            System.out.println(playerOneHand[i].rank + " " + playerOneHand[i].suit);
+//        }
     }
 }
