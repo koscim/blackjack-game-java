@@ -2,14 +2,14 @@ import java.io.*;
 public class Hand {
 
     Card[] cards;
-    Player owner;
+    Object owner;
     int score;
 
     public Hand() {
         this.cards = new Card[2];
     }
 
-    public void assignOwner(Player newOwner) {
+    public void assignOwner(Object newOwner) {
         owner = newOwner;
     }
 

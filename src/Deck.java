@@ -5,7 +5,7 @@ import java.util.*;
 public class Deck {
 
     Card[] collection;
-    String[] SUITS = new String[] {"spades", "diamonds", "clubs", "hearts"};
+    String[] SUITS = new String[] {"♠️", "♦️", "♣️", "♥️"};
     String[] RANKS = new String[] {"2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"};
 
     public Deck() {

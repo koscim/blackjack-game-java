@@ -38,15 +38,22 @@ public class Card {
     }
 
     public static void main(String []args) {
+        boolean playerTurn;
         Player player = new Player();
+        Dealer dealer = new Dealer();
+
         Deck deck = new Deck();
 
         Hand playerHand = new Hand();
-
         playerHand.addCards(deck.dealHand());
         playerHand.assignOwner(player);
         player.pickUpHand(playerHand);
 
+        Hand dealerHand = new Hand();
+        dealerHand.addCards(deck.dealHand());
+        dealerHand.assignOwner(dealer);
+
+        playerTurn = true;
 //
 //        Card[] playerOneHand = deck.dealHand();
 //        for(int i = 0; i < playerOneHand.length; i++) {

@@ -15,8 +15,8 @@ public class Player {
 
     public void pickUpHand(Hand dealtHand) {
         hand = dealtHand;
-        System.out.println("Player was dealt " + dealtHand.cards[0].rank + dealtHand.cards[0].suit);
-        System.out.println("Player was dealt " + dealtHand.cards[1].rank + dealtHand.cards[1].suit);
+        System.out.println("Player was dealt " + dealtHand.cards[0].rank + " " + dealtHand.cards[0].suit);
+        System.out.println("Player was dealt " + dealtHand.cards[1].rank + " " + dealtHand.cards[1].suit);
         hand.calculateHand();
     }
 
